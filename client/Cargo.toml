@@ -1,0 +1,16 @@
+[package]
+name = "new-app-client"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+mockall = { version = "0.12", optional = true }
+sails-rs = "0.9.1"
+
+[build-dependencies]
+new-app-app = { path = "../app" }
+sails-client-gen = "0.9.1"
+sails-idl-gen = "0.9.1"
+
+[features]
+mocks = ["sails-rs/mockall", "dep:mockall"]
